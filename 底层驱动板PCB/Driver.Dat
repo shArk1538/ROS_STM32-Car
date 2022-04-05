@@ -1,0 +1,20 @@
+﻿Field=#~Integer~#~50|Field=Comment~String~Comment~100|Field=Description~String~Description~100|Field=Designator~String~Designator~100|Field=Footprint~String~Footprint~100|Field=LibRef~String~LibRef~100|Field=Quantity~Integer~Quantity~100|ReportField=Currency~<none>|ReportField=ProductionQuantity~1|ReportField=ProjectFileName~Driver.PrjPCB|ReportField=ProjectFullPath~D:\学习\科研助理\傲拓迈六轮车开发\底层驱动板\Driver.PrjPCB|ReportField=Title~Bill of Materials For Project [Driver.PrjPCB] (No PCB Document Selected)|ReportField=ReportTime~21:42:58|ReportField=ReportDate~2020/7/19|ReportField=ReportDateTime~2020/7/19 21:42:58|ReportField=OutputName~Bill of Materials|ReportField=OutputType~BOM_PartType|ReportField=GeneratorName~BOM|ReportField=GeneratorDescription~Bill of Materials|ReportField=VariantName~None|ReportField=TotalQuantity~91|ReportField=TotalActualPrice~0|ReportField=TotalTargetPrice~0|ReportField=VersionControl_RevNumber~|ReportField=VersionControl_ProjFolderRevNumber~|ReportField=Address1~|ReportField=Address2~|ReportField=Address3~|ReportField=Address4~|ReportField=Application_BuildNumber~|ReportField=ApprovedBy~|ReportField=Author~|ReportField=CheckedBy~|ReportField=CompanyName~|ReportField=CurrentDate~2020/7/19|ReportField=CurrentTime~21:41:34|ReportField=Date~|ReportField=DocumentFullPathAndName~D:\学习\科研助理\傲拓迈六轮车开发\底层驱动板\Driver.SchDoc|ReportField=DocumentName~Driver.SchDoc|ReportField=DocumentNumber~|ReportField=DrawnBy~|ReportField=Engineer~|ReportField=ImagePath~|ReportField=ModifiedDate~2020/7/19|ReportField=Organization~|ReportField=ProjectName~Driver.PrjPCB|ReportField=Revision~|ReportField=Rule~|ReportField=SheetNumber~|ReportField=SheetTotal~|ReportField=Time~|ReportField=Title~|ReportField=DataSourceFileName~Driver.PrjPCB|ReportField=DataSourceFullPath~D:\学习\科研助理\傲拓迈六轮车开发\底层驱动板\Driver.PrjPCB|ReportField=PCBConfigurationName~Sources|ReportField=Item~|ReportField=ItemRevision~|ReportField=ItemAndRevision~|ReportField=ItemRevisionBase~|ReportField=ItemRevisionLevel1~|ReportField=ItemRevisionLevel2~|ReportField=ItemRevisionLevel1AndBase~|ReportField=ItemRevisionLevel2AndLevel1~
+1|Cap|Capacitor|C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14, C15, C16, C17, C18, C19, C20, C21, C22, C23, C24, C25, C26, C27, C28, C29, C30, C31, C32, C33, C34, C35|LC-0603_C|Cap|35
+2|D-SS12||D1, D2, D3, D4|SMA|D-SS12|4
+3|LED_0603||D5, D6|LED-0603|LED_0603|2
+4|Inductor|Inductor|L1||Inductor|1
+5|Header 2X2|Header, 2-Pin, Dual row|P1, P2|HDR2X2|Header 2X2|2
+6|Header 3X2|Header, 3-Pin, Dual row|P3|HDR2X3|Header 3X2|1
+7|Header 3|Header, 3-Pin|P4|HDR1X3|Header 3|1
+8|Header 2|Header, 2-Pin|P5, P8, P9, P10, P11|HDR1X2|Header 2|5
+9|Header 4|Header, 4-Pin|P6, P7|HDR1X4|Header 4|2
+10|Header 5|Header, 5-Pin|P12|HDR1X5|Header 5|1
+11|IRF3205||Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8|TO-252|IRF3205|8
+12|RES|Resistor|R1, R2, R3, R4, R5, R6, R7, R8, R9, R10, R11, R12, R13, R14, R15, R16, R17, R18|LC-0603_R|Res1|18
+13|SW_PB|SWITCH|S1||SW_PB|1
+14|AS1117-3.3||U1|SOT223|AS1117-3.3|1
+15|IR2104S||U2, U3, U4, U5||IR2104S|4
+16|stm32f103c8t6||U6||stm32f103c8t6|1
+17|CC6904SO||U7, U8||CC6902SO|2
+18|74HC244||U9|TSSOP20|74HC244|1
+19|12MHz|Crystal|X1||SMD3225|1

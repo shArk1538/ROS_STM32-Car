@@ -1,0 +1,3 @@
+Removed Pin From Net: NetName=VCC3.3 Pin=U1-4
+Added Member To Class: ClassName=Driver Member=Component Q3 IRF3205
+Added Member To Class: ClassName=Driver Member=Component Q5 IRF3205

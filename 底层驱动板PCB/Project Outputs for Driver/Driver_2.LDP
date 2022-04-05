@@ -1,0 +1,3 @@
+Layer Pairs Export File for PCB: D:\学习\科研助理\傲拓迈六轮车开发\底层驱动板\Driver_2.PcbDoc
+LayersSetName=Top_Bot_Thru_Holes|DrillFile=driver_2-roundholes.txt|DrillLayers=gtl,gbl
+LayersSetName=Top_Bot_Slot_Holes|DrillFile=driver_2-slotholes.txt|DrillLayers=gtl,gbl

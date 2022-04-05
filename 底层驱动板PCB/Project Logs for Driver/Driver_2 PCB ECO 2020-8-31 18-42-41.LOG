@@ -1,0 +1,5 @@
+Removed Pin From Net: NetName=VCC3.3 Pin=U1-4
+Change Component Footprint: Designator=D7 Old Footprint=DO-15_BD3.1-L6.7-P10.70-D0.9-FD New Footprint=SMB
+Change Component Footprint: Designator=D8 Old Footprint=DO-15_BD3.1-L6.7-P10.70-D0.9-FD New Footprint=SMB
+Change Component Footprint: Designator=D10 Old Footprint=DO-15_BD3.1-L6.7-P10.70-D0.9-FD New Footprint=SMB
+Change Component Footprint: Designator=D11 Old Footprint=DO-15_BD3.1-L6.7-P10.70-D0.9-FD New Footprint=SMB

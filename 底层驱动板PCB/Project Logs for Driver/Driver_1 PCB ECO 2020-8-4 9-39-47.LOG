@@ -1,0 +1,9 @@
+Removed Pin From Net: NetName=VCC3.3 Pin=U1-4
+Added Component: Designator=H1(安装孔)
+Add component. Clean all parameters for all variants
+Added Component: Designator=H2(安装孔)
+Add component. Clean all parameters for all variants
+Added Component: Designator=H3(安装孔)
+Add component. Clean all parameters for all variants
+Added Component: Designator=H4(安装孔)
+Add component. Clean all parameters for all variants

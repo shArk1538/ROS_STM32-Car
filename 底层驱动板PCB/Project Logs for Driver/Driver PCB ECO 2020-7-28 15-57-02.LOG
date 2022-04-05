@@ -1,0 +1,26 @@
+Removed Pin From Net: NetName=PWM_1 Pin=U9-2
+Removed Pin From Net: NetName=PWM_2 Pin=U9-4
+Removed Pin From Net: NetName=PWM_3 Pin=U9-6
+Removed Pin From Net: NetName=PWM_4 Pin=U9-8
+Removed Pin From Net: NetName=PWM4 Pin=U9-12
+Removed Pin From Net: NetName=PWM3 Pin=U9-14
+Removed Pin From Net: NetName=PWM2 Pin=U9-16
+Removed Pin From Net: NetName=PWM1 Pin=U9-18
+Change Component Footprint: Designator=D3 Old Footprint=1608[0603] New Footprint=0603
+Change Component Footprint: Designator=D4 Old Footprint=1608[0603] New Footprint=0603
+Change Component Footprint: Designator=D5 Old Footprint=1608[0603] New Footprint=0603
+Change Component Footprint: Designator=D6 Old Footprint=1608[0603] New Footprint=0603
+Change Component Footprint: Designator=D9 Old Footprint=1608[0603] New Footprint=0603
+Change Component Footprint: Designator=D10 Old Footprint=1608[0603] New Footprint=0603
+Change Component Footprint: Designator=L1 Old Footprint=1608[0603] New Footprint=0603
+Added Pin To Net: NetName=USART3_TX Pin=P2-3
+Added Pin To Net: NetName=USART3_RX Pin=P2-4
+Added Pin To Net: NetName=PWM_4 Pin=U9-2
+Added Pin To Net: NetName=PWM_3 Pin=U9-4
+Added Pin To Net: NetName=PWM_2 Pin=U9-6
+Added Pin To Net: NetName=PWM_1 Pin=U9-8
+Added Pin To Net: NetName=PWM1 Pin=U9-12
+Added Pin To Net: NetName=PWM2 Pin=U9-14
+Added Pin To Net: NetName=PWM3 Pin=U9-16
+Added Pin To Net: NetName=PWM4 Pin=U9-18
+Added Room: Name=Driver

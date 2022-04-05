@@ -1,0 +1,94 @@
+Removed Pin From Net: NetName=VCC5 Pin=C23-1
+Removed Pin From Net: NetName=VCC5 Pin=U6-8
+Change Component Designator: OldDesignator=C22 NewDesignator=C23
+Change Component Designator: OldDesignator=C23 NewDesignator=C22
+Change Component Designator: OldDesignator=C35 NewDesignator=C36
+Change Component Designator: OldDesignator=C36 NewDesignator=C35
+Change Component Designator: OldDesignator=D6 NewDesignator=D8
+Change Component Designator: OldDesignator=D7 NewDesignator=D9
+Change Component Designator: OldDesignator=D8 NewDesignator=D12
+Change Component Designator: OldDesignator=D9 NewDesignator=D13
+Change Component Designator: OldDesignator=D10 NewDesignator=D14
+Change Component Designator: OldDesignator=R4 NewDesignator=R6
+Change Component Designator: OldDesignator=R5 NewDesignator=R4
+Change Component Designator: OldDesignator=R6 NewDesignator=R5
+Change Component Designator: OldDesignator=R11 NewDesignator=R12
+Change Component Designator: OldDesignator=R12 NewDesignator=R13
+Change Component Designator: OldDesignator=R13 NewDesignator=R14
+Change Component Designator: OldDesignator=R14 NewDesignator=R15
+Change Component Designator: OldDesignator=R15 NewDesignator=R16
+Change Component Designator: OldDesignator=R16 NewDesignator=R17
+Change Component Designator: OldDesignator=R17 NewDesignator=R18
+Change Component Designator: OldDesignator=R18 NewDesignator=R19
+Change Component Designator: OldDesignator=R19 NewDesignator=R22
+Change Component Designator: OldDesignator=R22 NewDesignator=R23
+Change Component Designator: OldDesignator=R23 NewDesignator=R24
+Change Component Designator: OldDesignator=R24 NewDesignator=R25
+Added Component: Designator=D6(DO-15_BD3.1-L6.7-P10.70-D0.9-FD)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "BOM_Manufacturer"; Value = "RUILON"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "BOM_Manufacturer Part"; Value = "P6KE68A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "BOM_Supplier"; Value = "LCSC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "BOM_Supplier Part"; Value = "C10195"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "spicePre"; Value = "D"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "spiceSymbolName"; Value = "P6KE68A"; VariantName = "[No Variations]"
+Added Component: Designator=D7(DO-15_BD3.1-L6.7-P10.70-D0.9-FD)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "BOM_Manufacturer"; Value = "RUILON"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "BOM_Manufacturer Part"; Value = "P6KE68A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "BOM_Supplier"; Value = "LCSC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "BOM_Supplier Part"; Value = "C10195"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "spicePre"; Value = "D"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "spiceSymbolName"; Value = "P6KE68A"; VariantName = "[No Variations]"
+Added Component: Designator=D10(DO-15_BD3.1-L6.7-P10.70-D0.9-FD)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "BOM_Manufacturer"; Value = "RUILON"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "BOM_Manufacturer Part"; Value = "P6KE68A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "BOM_Supplier"; Value = "LCSC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "BOM_Supplier Part"; Value = "C10195"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "spicePre"; Value = "D"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "spiceSymbolName"; Value = "P6KE68A"; VariantName = "[No Variations]"
+Added Component: Designator=D11(DO-15_BD3.1-L6.7-P10.70-D0.9-FD)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "BOM_Manufacturer"; Value = "RUILON"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "BOM_Manufacturer Part"; Value = "P6KE68A"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "BOM_Supplier"; Value = "LCSC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "BOM_Supplier Part"; Value = "C10195"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "spicePre"; Value = "D"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "spiceSymbolName"; Value = "P6KE68A"; VariantName = "[No Variations]"
+Added Component: Designator=R11(0603R)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "Axial Device, Thru-Hole; 2 Leads; 0.3 in Pin Spacing"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "AXIAL-0.3"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "10K"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=VCC3.3 Pin=C22-1
+Added Pin To Net: NetName=RS485A Pin=D6-2
+Added Pin To Net: NetName=RS485B Pin=D7-2
+Added Pin To Net: NetName=DGND Pin=D10-2
+Added Pin To Net: NetName=DGND Pin=D11-2
+Added Pin To Net: NetName=RS485B Pin=R11-1
+Added Pin To Net: NetName=RS485A Pin=R11-2
+Added Pin To Net: NetName=VCC3.3 Pin=U6-8
+Change Net Name : Old Net Name=NetD6_1 New Net Name=NetD8_1
+Change Net Name : Old Net Name=NetD7_1 New Net Name=NetD9_1
+Change Net Name : Old Net Name=NetD8_1 New Net Name=NetD12_1
+Change Net Name : Old Net Name=NetD9_1 New Net Name=NetD13_1
+Change Net Name : Old Net Name=NetD10_1 New Net Name=NetD14_1
+Change Net Name : Old Net Name=NetR14_2 New Net Name=NetR15_2
+Change Net Name : Old Net Name=NetR22_1 New Net Name=NetR23_1
+Added Pin To Net: NetName=NetD6_1 Pin=D6-1
+Added Pin To Net: NetName=NetD6_1 Pin=D10-1
+Added Net: Name=NetD6_1
+Added Pin To Net: NetName=NetD7_1 Pin=D7-1
+Added Pin To Net: NetName=NetD7_1 Pin=D11-1
+Added Net: Name=NetD7_1
+Added Member To Class: ClassName=Driver Member=Component D11 P6KE6.8A
+Added Member To Class: ClassName=Driver Member=Component D12 LED_0603
+Added Member To Class: ClassName=Driver Member=Component D13 LED_0603
+Added Member To Class: ClassName=Driver Member=Component D14 LED_0603
+Added Member To Class: ClassName=Driver Member=Component R25 10K
+Added Room: Name=Driver

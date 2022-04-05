@@ -1,0 +1,5 @@
+Removed Pin From Net: NetName=ADC12_IN5 Pin=U9-7
+Removed Pin From Net: NetName=ADC12_IN4 Pin=U10-7
+Added Pin To Net: NetName=ADC12_IN4 Pin=U9-7
+Added Pin To Net: NetName=ADC12_IN5 Pin=U10-7
+Added Room: Name=Driver

@@ -1,0 +1,9 @@
+Removed Pin From Net: NetName=ADC12_IN4 Pin=U9-7
+Removed Pin From Net: NetName=ADC12_IN5 Pin=U10-7
+Added Pin To Net: NetName=ADC12_IN5 Pin=U9-7
+Added Pin To Net: NetName=ADC12_IN4 Pin=U10-7
+Added Member To Class: ClassName=Driver Member=Component C26 0.1¦ÌF
+Added Member To Class: ClassName=Driver Member=Component D6 P6KE11A
+Added Member To Class: ClassName=Driver Member=Component D7 P6KE11A
+Added Member To Class: ClassName=Driver Member=Component R12 100R
+Added Room: Name=Driver

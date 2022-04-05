@@ -1,0 +1,38 @@
+Removed Pin From Net: NetName=RS485A Pin=D6-2
+Removed Pin From Net: NetName=RS485B Pin=D7-2
+Removed Pin From Net: NetName=DGND Pin=D10-2
+Removed Pin From Net: NetName=DGND Pin=D11-2
+Removed Pin From Net: NetName=PWM_4 Pin=U7-2
+Removed Pin From Net: NetName=PWM_3 Pin=U7-4
+Removed Pin From Net: NetName=PWM_2 Pin=U7-6
+Removed Pin From Net: NetName=PWM_1 Pin=U7-8
+Removed Pin From Net: NetName=PWM1 Pin=U7-12
+Removed Pin From Net: NetName=PWM2 Pin=U7-14
+Removed Pin From Net: NetName=PWM3 Pin=U7-16
+Removed Pin From Net: NetName=PWM4 Pin=U7-18
+Change Component Designator: OldDesignator=R3 NewDesignator=R5
+Change Component Designator: OldDesignator=R4 NewDesignator=R3
+Change Component Designator: OldDesignator=R5 NewDesignator=R4
+Added Pin To Net: NetName=DGND Pin=D6-1
+Added Pin To Net: NetName=DGND Pin=D7-1
+Added Pin To Net: NetName=RS485A Pin=D10-1
+Added Pin To Net: NetName=RS485B Pin=D11-1
+Added Pin To Net: NetName=PWM_1 Pin=U7-2
+Added Pin To Net: NetName=PWM_2 Pin=U7-4
+Added Pin To Net: NetName=PWM_3 Pin=U7-6
+Added Pin To Net: NetName=PWM_4 Pin=U7-8
+Added Pin To Net: NetName=PWM4 Pin=U7-12
+Added Pin To Net: NetName=PWM3 Pin=U7-14
+Added Pin To Net: NetName=PWM2 Pin=U7-16
+Added Pin To Net: NetName=PWM1 Pin=U7-18
+Added Pin To Net: NetName=NetD6_2 Pin=D6-2
+Added Pin To Net: NetName=NetD6_2 Pin=D10-2
+Added Net: Name=NetD6_2
+Added Pin To Net: NetName=NetD7_2 Pin=D7-2
+Added Pin To Net: NetName=NetD7_2 Pin=D11-2
+Added Net: Name=NetD7_2
+Added Member To Class: ClassName=Driver Member=Component D6 P6KE11A
+Added Member To Class: ClassName=Driver Member=Component D7 P6KE11A
+Added Member To Class: ClassName=Driver Member=Component D10 P6KE6.8A
+Added Member To Class: ClassName=Driver Member=Component R11 100
+Added Room: Name=Driver
