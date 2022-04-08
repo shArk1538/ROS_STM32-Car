@@ -6,22 +6,21 @@ float position_x=0,position_y=0,oriention=0,velocity_linear=0,velocity_angular=0
 
 /***********************************************  输入  *****************************************************************/
 
-extern float odometry_right,odometry_left; //串口得到的左右轮速度
+extern float odometry_right,odometry_left; //串口得到的左右轮速度, main.c中被定义赋值
 
 /***********************************************  变量  *****************************************************************/
-
-float wheel_interval= 268.0859f;   //272.0f;  //1.0146
-//float wheel_interval=276.089f;    //轴距校正值=原轴距/0.987
-
-float multiplier=4.0f;           //倍频数
-float deceleration_ratio=90.0f;  //减速比
-float wheel_diameter=100.0f;     //轮子直径，单位mm
+//修改数据
+float wheel_diameter=190.0f;     //轮子直径，单位mm
+float dt=0.005f;                 //采样间隔时间5ms
+float multiplier=4.0f;           //倍频数，4倍频
+float deceleration_ratio=5.5f;  //减速比 从动轮直径110mm÷主动轮直径20mm
+float line_number=200.0f;       //编码器码盘线数
+float wheel_interval= 500.0f;   //两轮间距 50cm
+//固定数据
 float pi_1_2=1.570796f;          //pi/2
 float pi=3.141593f;              //pi
 float pi_3_2=4.712389f;          //pi*3/2
 float pi_2_1=6.283186f;          //pi*2
-float dt=0.005f;                 //采样间隔时间5ms
-float line_number=4096.0f;       //电机码盘线数
 float oriention_interval=0;      //dt时间内方向变化值
 
 float sin_=0;  //角度计算值
@@ -42,7 +41,7 @@ void odometry(float right,float left)
 {   
     if(once)  //常数仅计算一次
     {
-        const_frame=wheel_diameter*pi/(line_number*multiplier*deceleration_ratio);
+        const_frame=wheel_diameter*pi/(line_number*multiplier*deceleration_ratio); // 周长÷（线数×倍频数×减速比）
         const_angle=const_frame/wheel_interval;
         once=0;
     }
@@ -87,8 +86,8 @@ void odometry(float right,float left)
     position_x = position_x + delta_distance * cos_ * const_frame;//计算出里程计x坐标
     position_y = position_y + delta_distance * sin_ * const_frame;//计算出里程计y坐标
 
-    velocity_linear = delta_distance*const_frame / dt;//计算出里程计线速度
-    velocity_angular = oriention_interval / dt;//计算出里程计角速度
+    velocity_linear = delta_distance*const_frame/dt;  //计算出里程计线速度
+    velocity_angular = oriention_interval/dt;         //计算出里程计角速度
 
     //方向角角度纠正
     if(oriention > pi)

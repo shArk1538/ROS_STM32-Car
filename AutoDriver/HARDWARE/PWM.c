@@ -4,7 +4,7 @@
 
 //初始化TIM2和PWM输出
 
-void PWM_Init(void)
+void PWM_Init(void)  //PWM初始化
 {	
 	GPIO_InitTypeDef GPIO_InitStructure;							//定义GPIO初始化的结构体
 	TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;					//定义TIM时基初始化的结构体
@@ -20,21 +20,22 @@ void PWM_Init(void)
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);//TIM2的APB1总线时钟使能
 	
 	TIM_TimeBaseStructure.TIM_Period = PWM_ARR;						//设置自动重装载寄存器周期的值
-	TIM_TimeBaseStructure.TIM_Prescaler = PWM_PSC;					//设置用来作为TIMx时钟频率除数的预分频值
-																	//PWM频率：72000k/800/9=10k
+	TIM_TimeBaseStructure.TIM_Prescaler = PWM_PSC;					//设置用来作为TIMx时钟频率除数的预分频值  //PWM频率：72000k/800/9=10k
 	TIM_TimeBaseStructure.TIM_ClockDivision = TIM_CKD_DIV1;			//设置时钟分割：TDTS = Tck_tim
 	TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;		//TIM2向上计数模式
+	
 	TIM_TimeBaseInit(TIM2, &TIM_TimeBaseStructure);					//TIM2时基初始化
 	
 	TIM_OCInitStructure.TIM_OCMode = TIM_OCMode_PWM1;				//输出模式设置为PWM1
-	TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;	//
+	TIM_OCInitStructure.TIM_OutputState = TIM_OutputState_Enable;	//使能
 	TIM_OCInitStructure.TIM_OCPolarity = TIM_OCPolarity_High;		//有效极性为高
-	TIM_OC1Init(TIM2, &TIM_OCInitStructure);						//TIM2输出初始化
+	
+	TIM_OC1Init(TIM2, &TIM_OCInitStructure);	 //TIM2输出初始化
 	TIM_OC2Init(TIM2, &TIM_OCInitStructure);
 	TIM_OC3Init(TIM2, &TIM_OCInitStructure);
 	TIM_OC4Init(TIM2, &TIM_OCInitStructure);
 	
-	TIM_SetCompare1(TIM2, 0);										//TIM2比较寄存器赋值，PWM波占空比=compareval/800
+	TIM_SetCompare1(TIM2, 0);		//TIM2比较寄存器赋值，PWM波占空比=compareval/800
 	TIM_SetCompare2(TIM2, 0);
 	TIM_SetCompare3(TIM2, 0);
 	TIM_SetCompare4(TIM2, 0);
@@ -44,7 +45,7 @@ void PWM_Init(void)
 	TIM_OC3PreloadConfig(TIM2, TIM_OCPreload_Enable);
 	TIM_OC4PreloadConfig(TIM2, TIM_OCPreload_Enable);
 	
-	TIM_Cmd(TIM2, ENABLE);											//TIM2 ENABLE
+	TIM_Cmd(TIM2, ENABLE);			//TIM2 ENABLE
 }
 
 //分别设置左右电机的PWM占空比

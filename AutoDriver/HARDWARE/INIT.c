@@ -24,7 +24,7 @@ void HARDWARE_Init(void)
 	NVIC_Configuration(); 	 //设置NVIC中断分组2:2位抢占优先级，2位响应优先级
 	
 	//USART1
-	uart_init(115200);
+	uart_init(115200);  //串口1波特率为115200
 	
 	//PS2
 	PS2_Init();

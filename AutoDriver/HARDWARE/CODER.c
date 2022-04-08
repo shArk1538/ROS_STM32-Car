@@ -2,7 +2,7 @@
 
 //编码器初始化
 
-void TIMx_Encoder1_Config(void)
+void TIMx_Encoder1_Config(void)  //编码器1 左轮
 {
 	//重新初始化
 	TIM_DeInit(CODER_TIMx1);
@@ -49,7 +49,7 @@ void TIMx_Encoder1_Config(void)
 	TIM_Cmd(CODER_TIMx1, ENABLE);
 }
 
-void TIMx_Encoder2_Config(void)
+void TIMx_Encoder2_Config(void)  //编码器2 右轮
 {
 	//重新初始化
 	TIM_DeInit(CODER_TIMx2);
@@ -111,12 +111,12 @@ uint16_t Get_EncoderVal(TIM_TypeDef* TIMx)
 	return temp;
 }
 
-uint16_t Get_TIMx1_CNT(void)
+uint16_t Get_TIMx1_CNT(void) //右轮速度值
 {
 	return Get_EncoderVal(CODER_TIMx1);
 }
 
-uint16_t Get_TIMx2_CNT(void)
+uint16_t Get_TIMx2_CNT(void)  //左轮速度值
 {
 	return Get_EncoderVal(CODER_TIMx2);
 }

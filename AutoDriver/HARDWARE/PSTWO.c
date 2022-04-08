@@ -1,10 +1,7 @@
 #include "INCLUDE.h"
 
 /*********************************************************
-Copyright (C), 2015-2025, YFRobot.
-www.yfrobot.com
 File：PS2驱动程序
-Author：pinggai    Version:1.0     Data:2015/05/16
 Description: PS2驱动程序
 **********************************************************/	 
 

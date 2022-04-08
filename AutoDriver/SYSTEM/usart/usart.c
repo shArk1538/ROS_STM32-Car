@@ -1,12 +1,6 @@
 #include "sys.h"
 #include "usart.h"
 
-
-//STM32F103核心板例程
-//库函数版本例程
-/********** mcudev.taobao.com 出品  ********/
-
-
 ////////////////////////////////////////////////////////////////////////////////// 	 
 //如果使用ucos,则包括下面的头文件即可.
 #if SYSTEM_SUPPORT_UCOS
@@ -16,10 +10,6 @@
 //STM32开发板
 //串口1初始化		   
 
-////////////////////////////////////////////////////////////////////////////////// 	  
- 
-
-//////////////////////////////////////////////////////////////////
 ////加入以下代码,支持printf函数,而不需要选择use MicroLIB	  
 #if 1
 #pragma import(__use_no_semihosting)             
@@ -80,15 +70,26 @@ u16 USART_RX_STA=0;			//接收状态标记
 //bit6~0,	接收到数据长度
 u8 USART_DATA_STA=0;		//数据接收状态标记
 
-int16_t Speed1; //左轮速度
-int16_t Speed2; //右轮速度
-float Distance;
-int16_t MidDistance;
+/********************************************************************************************************/
 
-int16_t SpeedVal1; //左轮编码器读数
-int16_t SpeedVal2; //右轮编码器读数
+int16_t Speed1; //左轮期望速度
+int16_t Speed2; //右轮期望速度
 
-void uart_init(u32 bound){
+int16_t SpeedVal1; //左轮实际速度
+int16_t SpeedVal2; //右轮实际速度
+
+float Distance;  //这个距离是干什么的？
+int16_t MidDistance;  //用于走直线？
+
+extern u8 main_sta; //函数步骤执行标志位
+
+float odometry_right=0,odometry_left=0;//串口得到的左右轮速期望值，由Speed1、2赋值
+
+/********************************************************************************************************/
+
+//串口初始化
+void uart_init(u32 bound)
+	{
     //GPIO端口设置
 		GPIO_InitTypeDef GPIO_InitStructure;
 		USART_InitTypeDef USART_InitStructure;
@@ -114,7 +115,7 @@ void uart_init(u32 bound){
 		NVIC_Init(&NVIC_InitStructure);							//根据指定的参数初始化NVIC寄存器
   
     //USART 初始化设置
-		USART_InitStructure.USART_BaudRate = bound;					//一般设置为9600;(115200)
+		USART_InitStructure.USART_BaudRate = bound;					//一般设置为9600 or 115200
 		USART_InitStructure.USART_WordLength = USART_WordLength_8b;	//字长为8位数据格式
 		USART_InitStructure.USART_StopBits = USART_StopBits_1;		//一个停止位
 		USART_InitStructure.USART_Parity = USART_Parity_No;			//无奇偶校验位
@@ -125,9 +126,11 @@ void uart_init(u32 bound){
     USART_ITConfig(USART1, USART_IT_RXNE, ENABLE);	//开启中断
     USART_Cmd(USART1, ENABLE);                    	//使能串口
 
-}
-
-void USART1_IRQHandler(void)                	//串口1中断服务程序
+ }
+	
+/********************************************************************************************************/
+ 
+void USART1_IRQHandler(void)     //串口1中断服务程序
 {
 	u8 Res;
 #ifdef OS_TICKS_PER_SEC	 	//如果时钟节拍数定义了,说明要使用ucosII了.
@@ -144,10 +147,16 @@ void USART1_IRQHandler(void)                	//串口1中断服务程序
 				if(Res != 0x0a)					//没有接收到0x0a
 				{
 					USART_RX_STA = 0;			//接收错误,重新开始
+					
+					main_sta |= 0x08; //或
+					main_sta &= 0xFB; //与
 				}
 				else
 				{
 					USART_RX_STA |= 0x8000;		//接收到0x0a，接收完成了
+					
+					main_sta|=0x04;
+					main_sta&=0xF7;
 				}
 			}
 			else 							//还没收到0X0d
@@ -162,7 +171,9 @@ void USART1_IRQHandler(void)                	//串口1中断服务程序
 					USART_RX_STA++;
 					if(USART_RX_STA > (USART_REC_LEN-1))	//接收数据错误,重新开始接收
 					{
-						USART_RX_STA = 0;
+						USART_RX_STA=0;
+						
+						main_sta|=0x08;
 					}
 				}
 			}
@@ -175,11 +186,13 @@ void USART1_IRQHandler(void)                	//串口1中断服务程序
 }
 #endif
 
+/********************************************************************************************************/
 /*
 	自己实现的函数
 */
+/*************************************************发送**************************************************/
 
-//发送
+/*以下是对已定义函数的运用并进行自定义*/
 
 //直接以二进制码形式发送一个字节数据
 //
@@ -199,8 +212,8 @@ void USART_SendByteString(uint8_t data)
 {
 	uint8_t hexChar[16] = {'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
 	uint8_t data_high,data_low;
-	data_high = (data&0xF0) >> 4;
-	data_low = data&0x0F;
+	data_high = (data&0xF0) >> 4;  //取高四位
+	data_low = data&0x0F;        //低四位
 	
 	while(USART_GetFlagStatus(USART1,USART_FLAG_TC) == RESET);
 	USART_SendData(USART1, hexChar[data_high]);
@@ -216,7 +229,7 @@ void USART_SendByteString(uint8_t data)
 void USART_SendU16String(uint16_t data)
 {
 	uint8_t data_high,data_low;
-	data_high = (data&0xFF00) >> 8;
+	data_high = (data&0xFF00) >> 8;  //高8位
 	data_low = data&0x00FF;
 	
 	USART_SendByteString(data_high);
@@ -278,7 +291,7 @@ void USART_SendFloat(float data)
 	}
 }
 
-//接收
+/*************************************************接收**************************************************/
 
 //清空接收缓冲区
 void USART_ClearRXBuff(void)
@@ -355,13 +368,12 @@ void USART_DataHandler(void)
 			{
 				case 'V':			//改变速度
 				{
-					//分别控制做右轮速度，直线控制位置0
-					StraightLineFlag = 0;
+					StraightLineFlag = 0; //直线标志
 					if(USART_RX_BUF[2] == 'D')
 					{
 						uint8_t hexChar[16] = {'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
 						uint8_t data;
-						uint16_t uspeed1, uspeed2;
+						uint16_t uspeed1, uspeed2; //1为右轮，2为左轮
 						for(uint8_t i=3; i<7; i++)
 						{
 							data = 0x00;
@@ -384,12 +396,17 @@ void USART_DataHandler(void)
 						}
 						int16_t rxspeed1 = ((int16_t) uspeed1) - 0x7FFF;
 						int16_t rxspeed2 = ((int16_t) uspeed2) - 0x7FFF;
-						if(rxspeed1 > 0x00A0)rxspeed1 = 0x00A0;
+						
+						if(rxspeed1 > 0x00A0)rxspeed1 = 0x00A0;  //速度最大值0x00A0(1.6m/s)
 						if(rxspeed1 <-0x00A0)rxspeed1 =-0x00A0;
 						if(rxspeed2 > 0x00A0)rxspeed2 = 0x00A0;
 						if(rxspeed2 <-0x00A0)rxspeed2 =-0x00A0;
+						
 						Speed1 = rxspeed1;
 						Speed2 = rxspeed2;
+
+            odometry_right=(float)Speed1*10;   //要求单位mm/s, 不清楚原单位是否cm/s
+            odometry_left=(float)Speed2*10;
 					}
 					break;
 				}
